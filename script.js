@@ -26,7 +26,19 @@ var specialcharacters = ["!", "@", "#", "$", "%","^", "&", "*", "(", ")","_", "-
 
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
-writePassword('#generate').dialog({
+
+// checkboxes in a prompt pop up when you click generate
+
+
+
+
+
+
+
+const li = document.createElement("li");
+li.setAttribute("","")
+
+('#generate').dialog({
   title: "Prompt",
   buttons: {
     "Lowercase Letters": function() {
@@ -63,6 +75,40 @@ for (var i = 0; i < 1; i++) {
 
 
 
+// WHEN I answer each prompt
+// THEN my input should be validated and at least one character type should be selected
+
+// WHEN all prompts are answered
+// THEN a password is generated that matches the selected criteria
+
+function generatePassword() {
+
+
+
+  if () {
+  const random = Math.floor(Math.random() * lowercase.length);
+  console.log(random, lowercase[random]);
+  } else {
+
+  }
+
+
+if () {
+  const random = Math.floor(Math.random() * uppercase.length);
+  console.log(random, uppercase[random]);
+} else {
+
+}
+
+if () {
+  const random = Math.floor(Math.random() * specialcharacters.length);
+  console.log(random, specialcharacters[random]);
+} else {
+
+}
+
+if  () {
+
 for (var i = 0; i < 1; i++) {
 
   var num = Math.ceil(Math.random() * 9);
@@ -70,14 +116,16 @@ for (var i = 0; i < 1; i++) {
 
   console.log(num);
 }
+}
 
 
 
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
 
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
+
+}
+
+
+
 
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
