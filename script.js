@@ -30,33 +30,38 @@ var specialcharacters = ["!", "@", "#", "$", "%","^", "&", "*", "(", ")","_", "-
 // checkboxes in a prompt pop up when you click generate
 
 
+const lowercaseEl = document.querySelector("#lowercase")
+console.log(lowercaseEl)
+
+const uppercaseEl = document.querySelector("#uppercase")
+console.log(uppercaseEl)
+
+const numberEl = document.querySelector("#numbers")
+console.log(numberEl)
+
+const specialcharactersEl = document.querySelector("#nspecialcharacters")
+console.log(specialcharactersEl)
 
 
 
-
-
-const li = document.createElement("li");
-li.setAttribute("","")
-
-('#generate').dialog({
-  title: "Prompt",
-  buttons: {
-    "Lowercase Letters": function() {
-      selected = 1;
-    },
-    "Uppercase Letters": function() {
-      selected = 2;
-    },
-    "Numbers": function() {
-      selected = 3;
-    },
-    "Speacial Characters": function() {
-      selected = 4;
-    }
-  }
-});
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
+
+lowercaseEl.addEventListener("click", function(){
+  console.log(lowercaseEl.checked)
+})
+
+uppercaseEl.addEventListener("click", function(){
+  console.log(uppercaseEl.checked)
+})
+
+numberEl.addEventListener("click", function(){
+  console.log(numberEl.checked)
+})
+
+specialcharactersEl.addEventListener("click", function(){
+  console.log(specialcharactersEl.checked)
+})
 
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
@@ -85,40 +90,47 @@ function generatePassword() {
 
 
 
-  if () {
+
+// to activate lowercase 
+  if ("#lowercase" === true) {
   const random = Math.floor(Math.random() * lowercase.length);
   console.log(random, lowercase[random]);
-  } else {
+  } else { 
 
   }
 
-
-if () {
+  
+// to activate uppercase
+if ("#uppercase" === true) {
   const random = Math.floor(Math.random() * uppercase.length);
   console.log(random, uppercase[random]);
 } else {
 
 }
 
-if () {
+
+// to activate specialcharacters
+if ("#specialcharacters" === true) {
   const random = Math.floor(Math.random() * specialcharacters.length);
   console.log(random, specialcharacters[random]);
 } else {
 
 }
+// to activatate numbers
+if  ("#numbers" === true) {
 
-if  () {
+  for (var i = 0; i < 1; i++) {
 
-for (var i = 0; i < 1; i++) {
-
-  var num = Math.ceil(Math.random() * 9);
+    var num = Math.ceil(Math.random() * 9);
 
 
-  console.log(num);
+
+  } 
+} else {
+
 }
-}
 
-
+}          
 
 
 
@@ -129,4 +141,4 @@ for (var i = 0; i < 1; i++) {
 
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
-}
+
