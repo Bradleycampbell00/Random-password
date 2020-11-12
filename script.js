@@ -89,8 +89,6 @@ var specialcharacters = [
   "|",
 ];
 
-
-
 // List of const linking to id's in the html
 
 const lowercaseEl = document.querySelector("#lowercase");
@@ -105,7 +103,7 @@ console.log(numberEl);
 const specialcharactersEl = document.querySelector("#specialcharacters");
 console.log(specialcharactersEl);
 
-const passwordLength = document.querySelector("#password");
+const userInputEl = document.querySelector("#userInput");
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
@@ -128,6 +126,8 @@ specialcharactersEl.addEventListener("click", function () {
   console.log(specialcharactersEl.checked);
 });
 
+
+console.log(userInputEl)
 // WHEN prompted for the length of the password
 
 // WHEN prompted for character types to include in the password
@@ -139,35 +139,56 @@ specialcharactersEl.addEventListener("click", function () {
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
 
-function writePassword() {
-  for (var i = 0; i < "#userInput"; i++) {
-    var checkboxes = Math.floor(Math.random() * checkboxes.length);{
-     
+function generatePassword() {
+  console.log(generatePassword);
+  var generatedPass = ("");
+  for (var i = 0; i < userInputEl.value; i++) {
+    
+    console.log(generatedPass)
+    {
       // to activate lowercase
-      if (lowercaseEl === true) {
-        var lowercase = Math.floor(Math.random() * lowercase.length);
+      if (lowercaseEl.checked) {
+        var lowercaseGen =
+        lowercase[Math.floor(Math.random() * lowercase.length)];
+        generatedPass = generatedPass + lowercaseGen;
       }
 
       // to activate uppercase
-      if (uppercaseEl === true) {
-        var uppercase = Math.floor(Math.random() * uppercase.length);
+      if (uppercaseEl.checked) {
+        var uppercaseGen =
+          uppercase[Math.floor(Math.random() * uppercase.length)];
+        generatedPass = generatedPass + uppercaseGen;
       }
 
       // to activate specialcharacters
-      if (specialcharactersEl === true) {
-        var specialcharacters = Math.floor(Math.random() * specialcharacters.length)
+      if (specialcharactersEl.checked) {
+        var specialcharactersGen =
+          specialcharacters[
+            Math.floor(Math.random() * specialcharacters.length)
+          ];
+        generatedPass = generatedPass + specialcharactersGen;
       }
       // to activatate numbers
-      if (numberEl === true) {
-        for (var i = 0; i < 1; i++) {
-          var num = Math.ceil(Math.random() * 9);
-        }
+      if (numberEl.checked) {
+        var num = Math.ceil(Math.random() * 9);
+        generatedPass = generatedPass + num;
       }
     }
+    
   }
 
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
+var finalPass = generatedPass.slice(0, userInputEl.value);
+console.log(finalPass)
 
-
+return (finalPass);
 }
+
+
+// slice to size
+
+
+// shuffle
+
+
+  // WHEN the password is generated
+  // THEN the password is either displayed in an alert or written to the page
